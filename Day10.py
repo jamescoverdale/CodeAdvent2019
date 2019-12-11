@@ -71,3 +71,19 @@ for k, val in locs.items() :
 
 print(highestKey)
 print(len(locs[highestKey]))
+
+#################################
+# part2
+#################################
+
+myLocDict = locs[(21, 20)]
+myLoc = sorted(myLocDict, reverse=True) # sort by angle and reverse as we want to start at 180 degrees. 180 == up 0 == down -270 == left
+
+for i in range(1,200) :    
+    x = (myLocDict[myLoc[0]])[0]
+    y = (myLocDict[myLoc[0]])[1]  
+    aMap[x][y] = '.'       
+
+    myLoc.remove(myLoc[0])  # remove from list
+
+print(myLocDict[myLoc[0]])
